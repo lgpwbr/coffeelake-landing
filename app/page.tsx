@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -6,25 +7,26 @@ export default function Home() {
       {/* Header/Navbar */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="CoffeeLake Logo" width={50} height={50} className="object-contain" />
-            <h1 className="text-3xl font-bold text-gray-900">CoffeeLake</h1>
-          </div>
+        <div className="flex items-center gap-2">
+  <Image src="/images/logo-sem-fundo.png" alt="CoffeeLake Logo" width={40} height={40} className="object-contain md:w-[50px] md:h-[50px]" />
+ 
+</div>
           <div className="hidden md:flex gap-8">
             <a href="#about" className="text-gray-900 hover:text-blue-600 transition">Sobre</a>
             <a href="#products" className="text-gray-900 hover:text-blue-600 transition">Produtos</a>
             <a href="#testimonials" className="text-gray-900 hover:text-blue-600 transition">Depoimentos</a>
+<a href="#faq" className="text-gray-900 hover:text-blue-600 transition">FAQ</a>
             <a href="#contact" className="text-gray-900 hover:text-blue-600 transition">Contato</a>
           </div>
           <button className="bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
-            Comprar Agora
+            Compre Aqui
           </button>
         </div>
       </nav>
 
       {/* Hero Section */}
 {/* Hero Section */}
-<section className="relative pt-32 pb-20 px-6 min-h-screen flex items-center">
+<section className="relative pt-50 pb-01 px-5 min-h-screen flex items-start">
   {/* Imagem de fundo para MOBILE */}
   <div className="absolute inset-0 md:hidden">
     <Image 
@@ -51,10 +53,10 @@ export default function Home() {
 
   {/* Conteúdo do Hero */}
   <div className="max-w-7xl mx-auto text-center relative z-10">
-    <h2 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl">
       O Café dos Sonhos
     </h2>
-    <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
+   <p className="text-base md:text-lg text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
       Grãos selecionados das melhores fazendas, torrados com perfeição para despertar seus sentidos.
     </p>
     <div className="flex gap-4 justify-center flex-wrap">
@@ -90,9 +92,11 @@ export default function Home() {
                 <p className="text-gray-700 mb-4">Nosso blend clássico com notas de chocolate e caramelo. Perfeito para começar o dia.</p>
                 <div className="flex justify-between items-center">
                   <span className="text-2xl font-bold text-gray-900">R$ 29,90</span>
-                  <button className="bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
-                    Comprar
-                  </button>
+                  <Link href="/produto/classic-blend">
+  <button className="bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition">
+    Ver Detalhes
+  </button>
+</Link>
                 </div>
               </div>
             </div>
@@ -234,7 +238,93 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* FAQ Section */}
+<section id="faq" className="py-20 px-6 bg-white">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-5xl font-bold text-center text-gray-900 mb-4">Perguntas Frequentes</h2>
+    <p className="text-center text-gray-700 mb-12 text-lg">Tudo que você precisa saber sobre a CoffeeLake</p>
+    
+    <div className="space-y-4">
+      {/* Pergunta 1 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>🌍 De onde vêm os grãos da CoffeeLake?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Nossos grãos são cuidadosamente selecionados das melhores fazendas do Brasil, principalmente de Minas Gerais e do Sul de Minas, regiões conhecidas mundialmente pela qualidade excepcional do café arábica.
+        </p>
+      </details>
 
+      {/* Pergunta 2 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>📦 Como funciona a entrega?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Entregamos para todo o Brasil! O prazo varia de 3 a 7 dias úteis dependendo da região. Frete grátis para compras acima de R$ 100. Embalamos com muito cuidado para garantir que o café chegue fresquinho na sua casa.
+        </p>
+      </details>
+
+      {/* Pergunta 3 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>☕ Como devo armazenar o café?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Mantenha o café em local fresco, seco e ao abrigo da luz. Após abrir a embalagem, transfira para um recipiente hermético. Assim você preserva o aroma e o sabor por até 30 dias. Não guarde na geladeira!
+        </p>
+      </details>
+
+      {/* Pergunta 4 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>🔄 Posso trocar ou devolver?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Sim! Você tem até 7 dias após o recebimento para solicitar troca ou devolução, conforme o Código de Defesa do Consumidor. Se não ficar satisfeito com o produto, entre em contato conosco.
+        </p>
+      </details>
+
+      {/* Pergunta 5 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>💳 Quais formas de pagamento vocês aceitam?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Aceitamos cartão de crédito (até 3x sem juros), débito, Pix e boleto bancário. O pagamento é processado de forma 100% segura através do Mercado Pago.
+        </p>
+      </details>
+
+      {/* Pergunta 6 */}
+      <details className="group bg-blue-50 rounded-2xl p-6 cursor-pointer hover:bg-blue-100 transition">
+        <summary className="flex justify-between items-center font-semibold text-lg text-gray-900 list-none">
+          <span>🌱 O café é sustentável?</span>
+          <span className="transition group-open:rotate-180">
+            ▼
+          </span>
+        </summary>
+        <p className="mt-4 text-gray-700">
+          Absolutamente! Trabalhamos apenas com fazendas certificadas que praticam agricultura sustentável, respeitam o meio ambiente e valorizam os produtores locais. Nossa embalagem também é 100% reciclável.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
