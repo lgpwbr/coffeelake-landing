@@ -25,17 +25,16 @@ export default function ClassicBlendPage() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="CoffeeLake Logo" width={50} height={50} className="object-contain" />
-            <h1 className="text-3xl font-bold text-blue-900">CoffeeLake</h1>
-          </Link>
-          <Link href="/" className="text-gray-900 hover:text-blue-600 transition">
-            ← Voltar para Home
-          </Link>
-        </div>
-      </nav>
-
+  <div className="max-w-7xl mx-auto px-6 py-4 flex justify-center items-center relative">
+    <Link href="/" className="absolute left-6 text-gray-900 hover:text-blue-600 transition text-sm md:text-base">
+      ← Voltar
+    </Link>
+    
+    <Link href="/" className="flex items-center">
+      <Image src="/images/logo-sem-fundo.png" alt="CoffeeLake Logo" width={40} height={40} className="object-contain md:w-[50px] md:h-[50px]" />
+    </Link>
+  </div>
+</nav>
       {/* Produto */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -195,7 +194,7 @@ export default function ClassicBlendPage() {
       <footer className="bg-blue-900 text-white py-12 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center mb-4">
-            <Image src="/images/logo-sem-fundo.png" alt="CoffeeLake" width={60} height={60} className="object-contain" />
+            <Image src="/images/111.png" alt="CoffeeLake" width={60} height={60} className="object-contain" />
           </div>
           <h2 className="text-3xl font-bold mb-4">CoffeeLake</h2>
           <p className="mb-6">O café que transforma seus momentos</p>
